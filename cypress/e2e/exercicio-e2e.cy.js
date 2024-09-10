@@ -1,4 +1,5 @@
 /// <reference types="cypress" />
+const perfil = require('../fixtures/perfil.json')
 
 context('Exercicio - Testes End-to-end - Fluxo de pedido', () => {
     /*  Como cliente 
@@ -14,7 +15,11 @@ context('Exercicio - Testes End-to-end - Fluxo de pedido', () => {
     });
 
     it('Deve fazer um pedido na loja Ebac Shop de ponta a ponta', () => {
-        //TODO 
+        cy.get('.icon-user-unfollow').click() // Entre na página de login
+        cy.login(perfil.usuario,perfil.senha) // Faça login
+        cy.contains('Olá').should('exist') // Verifique se o login foi feito
+        
+
     });
 
 
