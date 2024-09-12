@@ -35,10 +35,10 @@ Cypress.Commands.add('login', (usuario, senha) => {
 Cypress.Commands.add('addProdutoAoCarrinho', (id, tamanho, cor, qtd) => {
     cy.get('#primary-menu > .menu-item-629 > a').click() // Acesse a página de produtos
     cy.get('.product-block').eq(id).click() // Escolha um produto
-    cy.get('.variable-items-wrapper').find(`[data-wvstooltip="${tamanho}"]`).click(); //Escolha o tamanho dele
-    cy.get('.variable-items-wrapper').find(`[data-wvstooltip="${cor}"]`).click(); //Escolha a cor dele
-    cy.get('.input-text').clear().type(qtd) //Escolha a quantidade dele
-    cy.get('.single_add_to_cart_button').click() //Clique em Comprar
+    cy.get('.variable-items-wrapper').find(`[data-wvstooltip="${tamanho}"]`).click(); // Escolha o tamanho dele
+    cy.get('.variable-items-wrapper').find(`[data-wvstooltip="${cor}"]`).click(); // Escolha a cor dele
+    cy.get('.input-text').clear().type(qtd) // Escolha a quantidade dele
+    cy.get('.single_add_to_cart_button').click() // Clique em Comprar
 });
 
 Cypress.Commands.add('preencherCheckout', (nome, sobrenome, pais, rua, numeroRua, cidade, estado, cep, numeroTelefone, email) => {
