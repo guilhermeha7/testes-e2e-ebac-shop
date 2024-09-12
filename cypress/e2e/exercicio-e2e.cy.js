@@ -40,7 +40,7 @@ context('Exercicio - Testes End-to-end - Fluxo de pedido', () => {
         cy.get('.woocommerce-message > .button').click() // Clique em Ver carrinho
         cy.get('.checkout-button').click() // Clique em Concluir Compra
         cy.preencherCheckout('Alváro','Pereira','Brasil','Rua Ewquejdwqiod','1000','São Paulo','São Paulo','01153000','911223344','alvaropereira@gmail.com')
-        cy.get('.woocommerce-notice').should('contain','Seu pedido foi recebido') // Verifique se o pedido foi recebido
+        cy.contains('Seu pedido foi recebido').should('exist')
     });
 
 
