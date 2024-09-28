@@ -8,7 +8,7 @@ pipeline {
             }
         }
 
-        stage('Instalar dependência e Inicializar servidor') {
+        stage('Instalar dependência') {
             steps {
                 bat 'npm install'
             }
@@ -16,7 +16,7 @@ pipeline {
 
         stage('Executar testes') {
             steps {
-               bat 'NO_COLOR=1 && npm run cy:run'
+               bat 'set NO_COLOR=1 && npm run cy:run'
             }
         }
     }
